@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velvet Husk - Sign In</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#894c5a",
+                        "tertiary": "#e2e2e2",
+                        "background": "#131313",
+                        "on-primary-container": "#7b404e",
+                        "secondary": "#b8c8da",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#524345",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#ffb1c1",
+                        "primary": "#ffd9df",
+                        "on-primary-fixed-variant": "#6d3543",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface": "#131313",
+                        "on-secondary": "#223240",
+                        "on-surface-variant": "#d6c2c4",
+                        "secondary-container": "#394857",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#2f3131",
+                        "surface-tint": "#ffb1c1",
+                        "on-primary": "#521f2d",
+                        "secondary-fixed-dim": "#b8c8da",
+                        "tertiary-container": "#c5c6c6",
+                        "on-tertiary-container": "#515253",
+                        "error-container": "#93000a",
+                        "outline": "#9f8c8f",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#394857",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed": "#ffd9df",
+                        "secondary-fixed": "#d4e4f6",
+                        "primary-container": "#ffb1c1",
+                        "inverse-on-surface": "#313030",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed": "#380a19",
+                        "on-secondary-fixed": "#0d1d2a",
+                        "on-secondary-container": "#a7b7c8",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#393939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC4qBby0tvniXNR8e_zd-uh6q0bWOk-y9Ua4PJ1tEJ-k2D6eNBe4eS_O4PIGPP3GedmB-3DsuhbYYCIFcimPHkaGiF5ypbZz7yHEkEARk9U09DwgKcfsILJ16LgLhP7k7CF34j8RNzSNsOAvOeQZytbI24yeHbFa3H0qGccayD7EA0j3jxU3uBF42_pCRdrgr5-jWoMhkGvnLuEVuWLyWEkiYP1EshdvidvHtvM1Wmp2j6Ezv56R59UPmc8mREVMFY3WuLYdUCGmSs);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.glass-panel {
+    background: rgba(32, 31, 31, 0.7);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px)
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen selection:bg-primary/30">
+<div class="grain-overlay fixed inset-0 z-50"></div>
+<main class="relative flex min-h-screen items-center justify-center overflow-hidden p-4 md:p-8 lg:p-12">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-background via-surface-container-low to-background"></div>
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary/5 rounded-full blur-[100px]"></div>
+<img alt="abstract 3D textures of soft swirling organic forms mimicking psyllium husk fibers with dramatic lighting" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30 grayscale" data-alt="abstract 3D textures of soft swirling organic forms mimicking psyllium husk fibers with dramatic lighting in shades of charcoal and soft rose" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBngNmQ2dZNgHQx8ciwBiBBgk59YXkMsYK9On2KThGSUu2wz6Fo2DaHe0CK2L7s7if_GUrpmRClhDR9gn1kvxHvda0teDRcf4JJD8eJCcoI2GmztiCBHeU_1yoFyCLzrItofnCtDjWUu7VzWNDCbZJ8VFSUlsm2UIseZiPgoE1q7IQfGLhQFL0isjjMN5pImfitvmAGzGSa5M1DfbkO-_yNCSRCgSHM704KadV4azEMXQFOU8G-mJc36773x6yUirWixLvPdNv3OH0"/>
+</div>
+<section class="relative z-10 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 glass-panel rounded-[2rem] overflow-hidden shadow-[0px_24px_48px_rgba(0,0,0,0.4)] border border-outline-variant/10">
+<div class="hidden md:flex relative flex-col justify-between p-12 overflow-hidden bg-surface-container-lowest/40">
+<div class="relative z-20">
+<h1 class="text-3xl font-headline font-extrabold tracking-tighter text-primary">Velvet Husk</h1>
+<p class="mt-4 text-on-surface-variant font-medium max-w-xs leading-relaxed">
+                        Experience the restoration of ritual. Pure psyllium, curated for your wellbeing.
+                    </p>
+</div>
+<div class="relative z-20 mt-auto">
+<div class="flex items-center gap-3 mb-6">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-high overflow-hidden">
+<img alt="user avatar" data-alt="close up portrait of a glowing young woman with clear skin and a soft smile in warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD7s9r3jFnt6Gl_TLqMARD6wuuOTC5696_LEt88muVmxBwCeZO2eVm1_0_4lmcJXmEHO-beCFVBJwuMqn0iNQ9yaCOhTkZSkHnscP4BJc2zxlMH3V3XqJ_OprOn6ycFuJwcCAjdo_QRs4o-NU7L5D-cvU69ni2KV5kHymwMyHp94-jqT40qe2G73tvOoNRyB4_rjqJNTTpdddWEcUCy88wgVh-dfmFuugF6WbdJEarb0lQ50uI9nsPafsjnStGw5rXg7d9e_Pq7Jc"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-high flex items-center justify-center text-xs font-bold text-primary">
+                                +2k
+                            </div>
+</div>
+<span class="text-sm font-label uppercase tracking-widest text-on-surface/60">Joined the Alchemist Club</span>
+</div>
+</div>
+<div class="absolute bottom-[-15%] right-[-10%] w-[80%] opacity-40 mix-blend-screen pointer-events-none">
+<img alt="3D render of psyllium husk" data-alt="3D high definition render of floating translucent particles and soft pink jelly textures breaking the grid with organic movement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-mU9bwyoby00sCFPr2vptpOSuL7MukPVUuaWrgO0hocBsr73ruIa3NI0SGkQmljEfkT8zb98KPmGSDw9jLaBxFHgDLK3S7bOQSHeFx_6fWdsQa0TNg_Pj2UNyAIjnNu0mZWviXxkLmBUjeUWMrWsttUbmWlxlKjt-sjtHukT0k3G-7GM2RZDFKOeeWT53I8i9jPA8PgcfZkhIh_CBNr7rHEWeskfj7GEmn5fz1as1WcmT5F66GjqsEo2Rvx5wtw7eFrJti6yjeo4"/>
+</div>
+</div>
+<div class="flex flex-col p-8 md:p-12 lg:p-16 bg-surface-container-low/20">
+<div class="mb-8">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Welcome back</h2>
+<p class="text-on-surface-variant mt-2">Enter your credentials to access your portal.</p>
+</div>
+<form id="login-form" class="space-y-5">
+<div id="error-msg" class="hidden text-[#ffd9df] text-sm font-semibold mb-2 text-center bg-error/20 border border-error/50 py-3 rounded"></div>
+<div class="space-y-2">
+<label class="block text-xs font-label uppercase tracking-widest text-outline ml-1">Email Address</label>
+<input id="email" class="w-full bg-surface-container-lowest/80 border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all outline-none" placeholder="alchemy@velvethusk.com" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-xs font-label uppercase tracking-widest text-outline">Password</label>
+<a class="text-xs font-label uppercase tracking-widest text-primary/80 hover:text-primary transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<input id="password" class="w-full bg-surface-container-lowest/80 border-none rounded-xl px-4 py-4 text-on-surface placeholder:text-outline-variant focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2 px-1">
+<input class="w-5 h-5 rounded border-none bg-surface-container-lowest text-primary focus:ring-primary/50 focus:ring-offset-0" id="remember" type="checkbox"/>
+<label class="text-sm text-on-surface-variant cursor-pointer" for="remember">Stay signed in for 30 days</label>
+</div>
+<button type="submit" id="login-btn" class="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold text-lg shadow-lg flex items-center justify-center hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+                        Sign In
+                    </button>
+</form>
+<div class="relative my-10">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase tracking-[0.2em] font-label">
+<span class="bg-surface-container-low px-4 text-outline">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-colors border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary transition-colors">brand_family</span>
+<span class="text-sm font-semibold">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-colors border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary transition-colors" data-weight="fill">ios</span>
+<span class="text-sm font-semibold">Apple</span>
+</button>
+</div>
+<div class="mt-10 text-center">
+<p class="text-on-surface-variant text-sm">
+                        New to the lab? 
+                        <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="#">Create an account</a>
+</p>
+</div>
+</div>
+</section>
+<footer class="absolute bottom-8 left-0 w-full px-8 flex flex-col md:flex-row justify-between items-center gap-4 opacity-40 pointer-events-none">
+<span class="text-[10px] font-label uppercase tracking-widest">© 2024 Velvet Husk Lab</span>
+<div class="flex gap-6">
+<span class="text-[10px] font-label uppercase tracking-widest">Ethics</span>
+<span class="text-[10px] font-label uppercase tracking-widest">Sourcing</span>
+<span class="text-[10px] font-label uppercase tracking-widest">Privacy</span>
+</div>
+</footer>
+</main>
+<script type="module" src="/src/auth.js"></script>
+</body></html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner Portal | The Fluid Alchemist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-primary": "#894c5a",
+                    "tertiary": "#e2e2e2",
+                    "background": "#131313",
+                    "on-primary-container": "#7b404e",
+                    "secondary": "#b8c8da",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#524345",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-fixed-dim": "#ffb1c1",
+                    "primary": "#ffd9df",
+                    "on-primary-fixed-variant": "#6d3543",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface": "#131313",
+                    "on-secondary": "#223240",
+                    "on-surface-variant": "#d6c2c4",
+                    "secondary-container": "#394857",
+                    "surface-dim": "#131313",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#2f3131",
+                    "surface-tint": "#ffb1c1",
+                    "on-primary": "#521f2d",
+                    "secondary-fixed-dim": "#b8c8da",
+                    "tertiary-container": "#c5c6c6",
+                    "on-tertiary-container": "#515253",
+                    "error-container": "#93000a",
+                    "outline": "#9f8c8f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#394857",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed": "#ffd9df",
+                    "secondary-fixed": "#d4e4f6",
+                    "primary-container": "#ffb1c1",
+                    "inverse-on-surface": "#313030",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed": "#380a19",
+                    "on-secondary-fixed": "#0d1d2a",
+                    "on-secondary-container": "#a7b7c8",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005",
+                    "surface-variant": "#353534",
+                    "surface-bright": "#393939"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(32, 31, 31, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .grain-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .liquid-gradient {
+            background: linear-gradient(135deg, #ffd9df 0%, #ffb1c1 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<div class="fixed inset-0 grain-texture z-[100]"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/70 backdrop-blur-xl shadow-[0px_24px_48px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#ffd9df] font-headline">The Fluid Alchemist</div>
+<div class="hidden md:flex items-center gap-8 font-plus-jakarta text-sm tracking-wide">
+<a class="text-neutral-400 hover:text-neutral-200 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Flavors</a>
+<a class="text-[#ffd9df] border-b border-[#ffd9df] pb-1 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Partner</a>
+<a class="text-neutral-400 hover:text-neutral-200 transition-all duration-300 ease-in-out hover:opacity-80" href="#">About</a>
+<a class="text-neutral-400 hover:text-neutral-200 transition-all duration-300 ease-in-out hover:opacity-80" href="#">Science</a>
+</div>
+<div class="flex items-center gap-4 text-[#ffd9df]">
+<button class="transition-all duration-300 ease-in-out hover:opacity-80 scale-105 duration-500">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="transition-all duration-300 ease-in-out hover:opacity-80 scale-105 duration-500">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden px-8">
+<div class="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6 font-label">The Circle of Alchemy</span>
+<h1 class="text-6xl md:text-8xl font-black text-on-surface leading-none tracking-tighter mb-8 font-headline">
+                        Evolve <span class="text-primary italic">Together.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Join an elite network of health visionaries. Share the restorative power of fluid nutrition and unlock exclusive rewards within our ecosystem.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="liquid-gradient text-on-primary font-bold px-10 py-4 rounded-full transition-transform hover:scale-105 duration-500 shadow-xl">
+                            Join the Alchemists
+                        </button>
+<button class="bg-surface-variant/40 border border-outline-variant/30 text-on-surface font-semibold px-10 py-4 rounded-full hover:bg-surface-variant/60 transition-all">
+                            View Portal
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<img class="w-full h-auto object-cover rounded-3xl mix-blend-screen transform rotate-3 scale-110" data-alt="3D abstract render of flowing organic pink silk and translucent jelly spheres against a deep charcoal background with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlmcqAKA2HiCmUAAlH-SeDsKLBG2b6Qgzmxr8jDaAVlLBP0YhWVNAgR2hjGNTNDpFusvUWMKz4W1WyhYZpMY8HvDswUuHpikHz5JiFFutQuxqcyR4OyFawnbb-JKPohXU3Rnu41nA1GZdYbbFHKr8ExuwxVJ2KGYhZxaXCRnxUEvWOsKp68Bx1NLnTszS_84v2OdNWzjYphlFuLn1lzFj0lWUd-CMIVm6pCw8iqESLGHEpSzKobS43eGS-EbuTluU45D7xMSTeMMU"/>
+</div>
+</div>
+</section>
+<!-- Benefits Bento Grid -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-16">
+<h2 class="text-4xl font-bold font-headline tracking-tight text-on-surface">The Alchemist Perks</h2>
+<p class="text-on-surface-variant mt-2">Elevating the standard of creative partnership.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Big Card -->
+<div class="md:col-span-2 glass-panel p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="payments">payments</span>
+<h3 class="text-3xl font-bold font-headline mb-4">High-Yield Commission</h3>
+<p class="text-on-surface-variant max-w-md">Earn up to 20% on every restorative journey you initiate. We believe in rewarding those who cultivate wellness.</p>
+</div>
+<img class="absolute top-0 right-0 h-full w-1/2 object-cover opacity-20 group-hover:opacity-40 transition-opacity" data-alt="Abstract 3D crystalline structures in soft pink tones representing wealth and growth in a minimalist digital space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI3gWVRQNVPJgjkmCQFMzUEh-f1Y50pg3Wx1JkoGuMj12372HZdb5Wp6MFzQU0cskuwmVnVFlgqAueCet_rWyqMTNO5V2aaMBJdNeO4wWckxJsJ3B01M5aofbe_hVAAJDQWKbTCr1HrXmA1a9LBpIWpjp_hTdIynVt6MSx37gOBTWs98A0HgSGjXyd4U7X_N5kS6f8HYjfIW7pXsDJJb7_EAjvy_6myPtlJXe78OwKtCCsY_9qr-iSQip-LmkAdXha09_EFe3gQQA"/>
+</div>
+<!-- Small Card -->
+<div class="bg-surface-container-high p-10 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-xl font-bold font-headline mb-4">Early Access</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Taste the future before the world. Exclusive first-rights to seasonal botanical drops and jelly blends.</p>
+</div>
+<!-- Small Card -->
+<div class="bg-surface-container-high p-10 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="hub">hub</span>
+<h3 class="text-xl font-bold font-headline mb-4">Studio Support</h3>
+</div>
+<p class="text-sm text-on-surface-variant">Access our high-resolution asset library, 3D renders, and campaign frameworks to elevate your storytelling.</p>
+</div>
+<!-- Another Big Card -->
+<div class="md:col-span-2 glass-panel p-10 rounded-xl flex items-center justify-between group overflow-hidden">
+<div class="max-w-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="workspace_premium">workspace_premium</span>
+<h3 class="text-3xl font-bold font-headline mb-4">The Golden Tier</h3>
+<p class="text-on-surface-variant">Top-performing partners receive personalized formulations and dedicated account strategy sessions.</p>
+</div>
+<div class="hidden lg:block w-64 h-64 bg-primary/5 rounded-full border border-primary/20 p-8">
+<div class="w-full h-full bg-primary/10 rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works - Asymmetric Layout -->
+<section class="py-32 px-8 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4 flex flex-col justify-center">
+<h2 class="text-5xl font-black font-headline tracking-tighter mb-8 leading-tight">
+                            A Fluid <br/><span class="text-primary">Process.</span>
+</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            We’ve refined our onboarding to be as smooth as our husks. No friction, just pure alignment.
+                        </p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+<!-- Step 1 -->
+<div class="p-8 rounded-xl bg-surface-container-lowest border-l-4 border-primary">
+<div class="text-6xl font-black text-primary/10 font-headline mb-[-2rem]">01</div>
+<h4 class="text-xl font-bold mb-4">Apply &amp; Align</h4>
+<p class="text-on-surface-variant">Submit your credentials. We look for curators who value aesthetics and gut-health equally.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-8 rounded-xl bg-surface-container-lowest mt-12">
+<div class="text-6xl font-black text-primary/10 font-headline mb-[-2rem]">02</div>
+<h4 class="text-xl font-bold mb-4">Receive &amp; Curate</h4>
+<p class="text-on-surface-variant">Get your Welcome Alchemist Kit. Capture the texture, the glow, and the feeling.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-8 rounded-xl bg-surface-container-lowest">
+<div class="text-6xl font-black text-primary/10 font-headline mb-[-2rem]">03</div>
+<h4 class="text-xl font-bold mb-4">Share &amp; Flow</h4>
+<p class="text-on-surface-variant">Use your unique link to guide your audience toward a more restorative daily ritual.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-8 rounded-xl bg-surface-container-lowest mt-12 border-l-4 border-primary">
+<div class="text-6xl font-black text-primary/10 font-headline mb-[-2rem]">04</div>
+<h4 class="text-xl font-bold mb-4">Scale &amp; Thrive</h4>
+<p class="text-on-surface-variant">Watch your dashboard grow. Earn rewards, bonuses, and perpetual restorative benefits.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8">
+<div class="max-w-4xl mx-auto text-center glass-panel p-16 rounded-[2rem] border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 blur-[80px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-black font-headline tracking-tighter mb-6">Ready to initiate the <span class="text-primary">alchemical flow?</span></h2>
+<p class="text-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Applications are reviewed weekly. Join our limited circle of premium health partners today.</p>
+<button class="liquid-gradient text-on-primary font-bold text-lg px-12 py-5 rounded-full transition-all hover:scale-110 shadow-2xl">
+                        Apply Now
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full py-12 px-8">
+<div class="flex flex-col items-center gap-6">
+<div class="text-md font-bold text-[#ffd9df] font-headline">The Fluid Alchemist</div>
+<div class="flex flex-wrap justify-center gap-8 font-manrope text-xs uppercase tracking-widest">
+<a class="text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Terms of Service</a>
+<a class="text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Shipping</a>
+<a class="text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Returns</a>
+<a class="text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Contact</a>
+</div>
+<p class="text-neutral-500 font-manrope text-[10px] uppercase tracking-[0.2em] mt-4">
+                © 2024 The Fluid Alchemist. Crafted for restoration.
+            </p>
+</div>
+</footer>
+<!-- SideNavBar - Suppressed for this focused marketing page per instructions, but kept as hidden structure if needed -->
+<aside class="hidden h-screen w-64 fixed left-0 top-0 z-40 bg-neutral-900/80 backdrop-blur-2xl flex-col py-8 shadow-2xl">
+<div class="px-6 mb-12">
+<div class="text-lg font-black text-[#ffd9df] font-headline">Alchemist Club</div>
+<div class="text-xs text-neutral-400">Premium Member</div>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 transition-colors font-manrope text-base" href="#">Shop All</a>
+<a class="bg-gradient-to-r from-[#ffd9df] to-[#ffd9df]/20 text-neutral-900 font-bold rounded-r-full py-3 px-6 font-manrope text-base" href="#">Partner Portal</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 transition-colors font-manrope text-base" href="#">Best Sellers</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 transition-colors font-manrope text-base" href="#">Subscription</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 transition-colors font-manrope text-base" href="#">Support</a>
+</nav>
+</aside>
+</body></html>

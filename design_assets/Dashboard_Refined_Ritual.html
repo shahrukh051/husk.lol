@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fluid Alchemist | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-primary": "#894c5a",
+                    "tertiary": "#e2e2e2",
+                    "background": "#131313",
+                    "on-primary-container": "#7b404e",
+                    "secondary": "#b8c8da",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#524345",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-fixed-dim": "#ffb1c1",
+                    "primary": "#ffd9df",
+                    "on-primary-fixed-variant": "#6d3543",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface": "#131313",
+                    "on-secondary": "#223240",
+                    "on-surface-variant": "#d6c2c4",
+                    "secondary-container": "#394857",
+                    "surface-dim": "#131313",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#2f3131",
+                    "surface-tint": "#ffb1c1",
+                    "on-primary": "#521f2d",
+                    "secondary-fixed-dim": "#b8c8da",
+                    "tertiary-container": "#c5c6c6",
+                    "on-tertiary-container": "#515253",
+                    "error-container": "#93000a",
+                    "outline": "#9f8c8f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#394857",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed": "#ffd9df",
+                    "secondary-fixed": "#d4e4f6",
+                    "primary-container": "#ffb1c1",
+                    "inverse-on-surface": "#313030",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed": "#380a19",
+                    "on-secondary-fixed": "#0d1d2a",
+                    "on-secondary-container": "#a7b7c8",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005",
+                    "surface-variant": "#353534",
+                    "surface-bright": "#393939"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: "Manrope", sans-serif;
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .glass-card {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(159, 140, 143, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 217, 223, 0.3);
+        }
+        .grain-overlay {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDUCuTJiXIKFdNvH7a7qhTHlOBwH54CUQWMpQdLiaRUUI_LpqLu08L9BTSUlIKLw1JJYeYs2YijSHytvgNIlAB8gQfEcdpxKtXSpagLC2gvlVuvk06_3oV2V7IVrKVJIIPpPrF7YKKRTESDbQnpfSp0lxypLxYWxA-Fz7EdhrtAWDwwJVEF1kWmCOVeYokWww8I7t5vP4_9QYTeU_S0aFLCEfzWZfs8He-h3k2Ymvu6iLo81wK_n9zXCzJ0UCFL8DAQ2jVUWr_IUM4);
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0% { transform: translate(-50%, -48%) rotate(0deg); }
+            50% { transform: translate(-50%, -52%) rotate(2deg); }
+            100% { transform: translate(-50%, -48%) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary selection:text-on-primary">
+<div class="fixed inset-0 grain-overlay z-50"></div>
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 z-40 bg-neutral-900/80 backdrop-blur-2xl flex flex-col py-8 shadow-2xl hidden md:flex">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-black text-[#ffd9df] tracking-tighter">The Fluid Alchemist</h1>
+</div>
+<div class="flex-grow space-y-1">
+<div class="px-6 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Navigation</span>
+</div>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 flex items-center gap-3 transition-colors duration-600 group" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span>Shop All</span>
+</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 flex items-center gap-3 transition-colors duration-600 group" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span>Best Sellers</span>
+</a>
+<a class="bg-gradient-to-r from-[#ffd9df] to-[#ffd9df]/20 text-neutral-900 font-bold rounded-r-full py-3 px-6 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span>Subscription</span>
+</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 flex items-center gap-3 transition-colors duration-600 group" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span>Partner Portal</span>
+</a>
+<a class="text-neutral-400 hover:text-[#ffd9df] py-3 px-6 flex items-center gap-3 transition-colors duration-600 group" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+<div class="mt-auto px-6 py-6">
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full border border-primary/20 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA59Wa1TIxlq6G1UtPc1DpbMqyUtZgRCk7C3LQ9qyiXNLgaibSSrHKTXzwGtQMDbsSEr_P0QjnLg06l7hQJROiPK64kHNERwYTRC2ZMy-NPo1ksgTaMUho7Fff4Fis3S-DFeVSGMfXuV3wSE_F9c8T7QgIOzL_ILmzCJijeUXpTyDP2qWXySOGOTTLOkOvI6DtrhwIaTeqZKfjHFH1SXnVafoIa2od81k2JCf9Rq9vgELmFjU-LpbI6fIURTIiDfMIALi0qc7NSbtw"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold text-primary truncate">Alchemist Club</p>
+<p class="text-[10px] text-neutral-400 uppercase tracking-widest">Premium Member</p>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-2 px-4 rounded-full text-xs font-bold uppercase tracking-tighter hover:scale-105 transition-all duration-300">
+                    Shop Now
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="md:pl-64 min-h-screen relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-0 md:left-64 z-30 bg-neutral-900/70 backdrop-blur-xl transition-all duration-300 ease-in-out shadow-[0px_24px_48px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-neutral-400 hover:text-neutral-200 font-plus-jakarta text-sm tracking-wide transition-all duration-300" href="#">Flavors</a>
+<a class="text-neutral-400 hover:text-neutral-200 font-plus-jakarta text-sm tracking-wide transition-all duration-300" href="#">Partner</a>
+<a class="text-neutral-400 hover:text-neutral-200 font-plus-jakarta text-sm tracking-wide transition-all duration-300" href="#">About</a>
+<a class="text-neutral-400 hover:text-neutral-200 font-plus-jakarta text-sm tracking-wide transition-all duration-300" href="#">Science</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="bg-surface-container-lowest px-4 py-2 rounded-full hidden sm:flex items-center gap-2 border border-outline-variant/15">
+<span class="material-symbols-outlined text-sm text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder-neutral-500 w-32" placeholder="Search potions..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined hover:scale-110 transition-transform cursor-pointer">shopping_bag</span>
+<span class="material-symbols-outlined hover:scale-110 transition-transform cursor-pointer">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-12">
+<!-- Redesigned Hero Stats Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main 3D Floating Hero -->
+<div class="lg:col-span-2 glass-card rounded-[2.5rem] p-10 md:p-14 relative overflow-hidden group min-h-[480px] flex items-center">
+<!-- Background Decorative Text -->
+<div class="absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-[0.03] transition-opacity duration-700 group-hover:opacity-[0.05]">
+<span class="text-[22rem] font-black font-headline tracking-tighter">FLUID</span>
+</div>
+<!-- Content Layer -->
+<div class="relative z-20 max-w-lg">
+<div class="flex items-center gap-3 mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-primary/80">Welcome back, Curator</span>
+</div>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.05] mb-6 tracking-tighter">
+                            Your daily <br/>
+<span class="text-primary italic relative">
+                                Sylum Husk Jelly
+                                <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-primary to-transparent"></span>
+</span> <br/>
+                            ritual.
+                        </h2>
+<p class="body-md text-neutral-400 font-medium leading-relaxed mb-10 text-lg">
+                            The Alchemist’s blend is ready. Today's recommendation: <span class="text-neutral-200">Dark Chocolate &amp; Sea Salt</span> for cognitive focus.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-sm hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-primary/20 flex items-center gap-2 group/btn">
+                                Start Daily Ritual
+                                <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-on-surface px-8 py-4 rounded-full font-bold text-sm border border-white/10 transition-all duration-300">
+                                Ritual History
+                            </button>
+</div>
+</div>
+<!-- 3D Jar Composition -->
+<div class="absolute top-0 right-0 w-full md:w-1/2 h-full pointer-events-none hidden md:block">
+<div class="relative w-full h-full">
+<!-- Glow effects -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+<img class="absolute top-1/2 left-1/2 w-[420px] max-w-none object-contain drop-shadow-[0_50px_50px_rgba(255,217,223,0.4)] animate-float z-10" data-alt="Premium glass jar containing translucent pink jelly floating in mid-air with soft studio lighting and ethereal pink vapor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-z0xdRJMBAwonbGWUXnvei0InBnx2EbAAXXD3YU_NZuSTYIMegXRb_X9yoJVbHKEBVu_ajfB0u72zNSAgAf5VXVfyRjZlmPrm772vhD3rs-kTp9XNWC4A36u3bHiBydkTctz33eAXxvxk8Eiv2R-UKjoCy6rJgbhzFde4oBliHvk2Nn-8hVHIDBFpAUhG4J0t2zADpakVW74oShPZPiCGn69RNROkWFzslfsI8dyy1Y3196RdexV-i-rfe33mzGL-I5cwk9xbuHM"/>
+</div>
+</div>
+</div>
+<!-- User Stats Column -->
+<div class="flex flex-col gap-6">
+<div class="glass-card rounded-[2.5rem] p-8 flex flex-col justify-between flex-1">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="text-xs font-bold text-neutral-500 uppercase tracking-widest">LOYALTY</span>
+</div>
+<div>
+<p class="text-4xl font-headline font-black text-on-surface">2,450</p>
+<p class="text-sm text-neutral-400">Points Earned</p>
+</div>
+<div class="w-full bg-neutral-800 h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="glass-card rounded-[2.5rem] p-8 flex flex-col justify-between flex-1">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shutter_speed</span>
+</div>
+<span class="text-xs font-bold text-neutral-500 uppercase tracking-widest">HISTORY</span>
+</div>
+<div>
+<p class="text-4xl font-headline font-black text-on-surface">12</p>
+<p class="text-sm text-neutral-400">Flavors Explored</p>
+</div>
+<div class="flex -space-x-2 mt-4">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-red-400"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-yellow-600"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-pink-300"></div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full border-2 border-background bg-neutral-800 text-[10px] font-bold">+9</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Flavor Discovery -->
+<section>
+<div class="flex items-end justify-between mb-8">
+<div>
+<h3 class="text-3xl font-headline font-bold text-on-surface tracking-tight">The Alchemist’s Palette</h3>
+<p class="text-neutral-500">Explore restorative textures and botanical notes.</p>
+</div>
+<button class="text-primary text-sm font-bold uppercase tracking-widest hover:opacity-70 flex items-center gap-2 transition-opacity">
+                        View All Collections <span class="material-symbols-outlined text-sm">east</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Flavor Card 1 -->
+<div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+<img alt="Midnight Cacao" class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRu8nFv84o6BoYUCk0SbvkvggAVRnYg1P91DH6-omnXZekgta-42_c36t2xJG1drXE2a4dxj977nxFvJqmC7stJafhxKATt0BB1q9QkPw1usN_dCkowuyRrXEPd-XoPHrFqOWV3GgVhny5_dVQ1kNMm9U6m3EK5mtI-9ctzZMoWMCfBtP33ENBi_KntrSMaPp24qrMho7F0VxVDylUTFXQpPi7YX_rhLof4SEKuWu4DLUVnJRbLWqxa8Aw9vgOD7HqlMurmPaGuNY"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">Indulgence</div>
+<h4 class="text-2xl font-headline font-bold text-on-surface mb-2 tracking-tight">Midnight Cacao</h4>
+<p class="text-xs text-neutral-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Silky dark cacao Sylum Husk Jelly with volcanic salt for deep cognitive restoration.</p>
+<button class="w-full py-3 rounded-xl border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">Add to Ritual</button>
+</div>
+</div>
+<!-- Flavor Card 2 -->
+<div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2 translate-y-4">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+<img alt="Wild Blossom" class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRq3J-pmBRk8ISTmJ66ObLJsqBYrzMdNXaXjmHHXsV8vJWvf7sS-Qwd_a16PERV68pp3yh48EbrYJ6zGSQQ0wMmfJtMKG5p4xzd6TPe08Jx6EwLZVgp-LnO6ifHq4Ni2VXrXG-wrbgxVxBWYspEzRKami96deQDd3BKKPkFjG-AxbqpBhS2I_ikqAU-lw_3Vy8gjcXZhCUfjRYh3zR2uSuMXBjYetXJ6LeTEG_Qo9F0wZbFxzibtj9INIhedIGckrxaKowM8gjXY"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="bg-secondary/20 backdrop-blur-md text-secondary text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">Vivacity</div>
+<h4 class="text-2xl font-headline font-bold text-on-surface mb-2 tracking-tight">Wild Blossom</h4>
+<p class="text-xs text-neutral-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Vibrant alpine strawberry Sylum Husk Jelly with a delicate floral bounce.</p>
+<button class="w-full py-3 rounded-xl border border-secondary/30 text-secondary text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all duration-300">Add to Ritual</button>
+</div>
+</div>
+<!-- Flavor Card 3 -->
+<div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+<img alt="Solar Yuzu" class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3t0pihTQlr0rjIx32a93KrbcAQP1q11obk5splH12ZJUXq0sTMRo-3koncA-f_b7VHSyIzp_Hms2i0XQ2Ush1B4mcn_Um7HUaaHkMlDq89zlqnmVO0B623a-APl58mA0G1-4PsmYfGk5vvSBARbg67751h2V1YsM657jZNeaWDMBzuO1B3yBMH0nOjPfY_feT31cektKqAxM5kuaWXo33HeVwISyyXCJpsNxIsee7bssGYQi2F8ufNIqs_17IEDjxKFRihjsPziM"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="bg-yellow-400/20 backdrop-blur-md text-yellow-400 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">Focus</div>
+<h4 class="text-2xl font-headline font-bold text-on-surface mb-2 tracking-tight">Solar Yuzu</h4>
+<p class="text-xs text-neutral-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Zesty Japanese yuzu and ginger Sylum Husk Jelly with an energizing snap.</p>
+<button class="w-full py-3 rounded-xl border border-yellow-400/30 text-yellow-400 text-xs font-bold uppercase tracking-widest hover:bg-yellow-400 hover:text-neutral-900 transition-all duration-300">Add to Ritual</button>
+</div>
+</div>
+<!-- Flavor Card 4 -->
+<div class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2 translate-y-4">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10"></div>
+<img alt="Velvet Indigo" class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB7w3lJLaXFR2Pp-ZmZ3QR9mP0sbbsmaBbHQDyGlF4I_TrvDdF1dxI1fgWBqnJ3GQsfNWCwCx7YCbSXauAvn0z597ycC5XX3s3jct2osh8qJ06dB5RzJmNE_xv0gq_5t_2ti2WvsnL2pJIHaMFHwyYuSErzzpaEak1ziW01uFXomytuqATyqMpD-FjhvaiC02ynursOu-WGs3rmTxHZ6T7VdQ_Uagz9ThMFvnGFO1IjyP8Ku_eaJQUymHVcYYUT_uw0HN-2QfoHdE"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full">
+<div class="bg-purple-400/20 backdrop-blur-md text-purple-400 text-[10px] font-bold px-3 py-1 rounded-full w-fit mb-3 uppercase tracking-widest">Serenity</div>
+<h4 class="text-2xl font-headline font-bold text-on-surface mb-2 tracking-tight">Velvet Indigo</h4>
+<p class="text-xs text-neutral-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Velvety blueberry Sylum Husk Jelly with a calming lavender essence.</p>
+<button class="w-full py-3 rounded-xl border border-purple-400/30 text-purple-400 text-xs font-bold uppercase tracking-widest hover:bg-purple-400 hover:text-on-primary transition-all duration-300">Add to Ritual</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Loyalty Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="glass-card rounded-[2.5rem] p-10 flex flex-col justify-center overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="text-3xl font-headline font-extrabold text-on-surface mb-4 tracking-tighter">Fluid Subscription</h3>
+<p class="text-neutral-400 body-md mb-8 max-w-sm">Never miss your restoration. Your monthly Sylum Husk Jelly box ships in <span class="text-primary font-bold">3 days</span>.</p>
+<div class="flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">deployed_code</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border-4 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">package_2</span>
+</div>
+</div>
+<a class="text-primary font-bold text-sm underline underline-offset-8 decoration-primary/30 hover:decoration-primary" href="#">Manage My Plan</a>
+</div>
+</div>
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+<div class="bg-surface-container-low rounded-[2.5rem] p-10 border border-outline-variant/10 relative group cursor-pointer hover:bg-surface-container transition-colors duration-500">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary text-4xl">workspace_premium</span>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<h3 class="text-xl font-bold mb-2">The Alchemist’s Tier</h3>
+<p class="text-sm text-neutral-500 mb-6">You are 150 points away from unlocking <span class="text-white italic font-medium">Free Express Ritual Delivery</span> forever.</p>
+<div class="space-y-4">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-neutral-500">
+<span>Apprentice</span>
+<span class="text-primary">Alchemist</span>
+</div>
+<div class="h-2 w-full bg-background rounded-full overflow-hidden">
+<div class="h-full w-[85%] bg-gradient-to-r from-primary/50 to-primary"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-neutral-950 flex flex-col items-center gap-6 mt-12 border-t border-outline-variant/5">
+<div class="text-md font-bold text-[#ffd9df] tracking-tighter uppercase">The Fluid Alchemist</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-manrope text-xs uppercase tracking-widest text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Privacy Policy</a>
+<a class="font-manrope text-xs uppercase tracking-widest text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Terms of Service</a>
+<a class="font-manrope text-xs uppercase tracking-widest text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Shipping</a>
+<a class="font-manrope text-xs uppercase tracking-widest text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Returns</a>
+<a class="font-manrope text-xs uppercase tracking-widest text-neutral-500 hover:text-[#ffd9df] transition-opacity" href="#">Contact</a>
+</nav>
+<p class="font-manrope text-xs uppercase tracking-widest text-neutral-600 text-center">© 2024 The Fluid Alchemist. Crafted for restoration.</p>
+</footer>
+</main>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-xl px-6 py-4 flex justify-around items-center border-t border-outline-variant/10">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Shop</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-neutral-400">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Best</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-neutral-400">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Club</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-neutral-400">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">You</span>
+</button>
+</nav>
+<!-- FAB -->
+<div class="fixed bottom-24 right-8 z-50 md:bottom-12 md:right-12">
+<button class="w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group overflow-hidden relative">
+<span class="material-symbols-outlined text-3xl relative z-10">add_shopping_cart</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</body></html>
